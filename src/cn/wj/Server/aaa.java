@@ -1,6 +1,6 @@
-package cn.wj.test;
+package cn.wj.Server;
 
-public class Test {
+public class aaa {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
