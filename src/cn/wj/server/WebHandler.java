@@ -29,7 +29,7 @@ public class WebHandler extends DefaultHandler{
 				isMapping=false;
 			}else if(tag.equals("servlet-mapping")){
 				mapping=new Mapping();
-				isMapping=false;
+				isMapping=true;
 			}
 		}
 	}

@@ -13,19 +13,21 @@ import java.util.Map;
 public class WebContext {
 	
 	//key->servlet-name  value->servlet-class
-	private Map<String,String> entityMap=new HashMap<>();
-	//key->url-pattern  value->servlet0-name
-	private Map<String,String> mappingMap=new HashMap<>();
+	private Map<String,String> entityMap=new HashMap<String,String>();
+	//key->url-pattern  value->servlet-name
+	private Map<String,String> mappingMap=new HashMap<String,String>();
+	
 	public WebContext(List<Entity> entitys, List<Mapping> mappings) {
 		super();
 		
 		//将entity的List转换成对应的map
 		for(Entity entity:entitys){
 			entityMap.put(entity.getName(), entity.getClz());
+			System.out.println(entity.getName()+"---------->"+entity.getClz());
 		}
 		//将map的List转成对应的map
 		for(Mapping mapping:mappings){
-			for(String pattern:mapping.getPatterns()){
+			for(String pattern:mapping.getPatterns()){   //getPatterns是set
 				mappingMap.put(pattern, mapping.getName());
 			}
 		}

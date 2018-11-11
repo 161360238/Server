@@ -6,5 +6,5 @@ package cn.wj.server;
  *
  */
 public interface Servlet {
-	
+	void service(Request request,Response response);
 }

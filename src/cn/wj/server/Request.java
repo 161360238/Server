@@ -113,5 +113,35 @@ public class Request {
 		}
 		return null;
 	}
+	/**
+	 * 通过name获取对应的多个值
+	 */
+	public String[] getParameterValues(String key){
+		List<String> values=this.parameterMap.get(key);
+		if(null==values||values.size()<1){
+			return null;
+		}
+		return values.toArray(new String[0]);
+	}
+	/**
+	 * 通过name获取对应的一个值
+	 * @param key
+	 * @return
+	 */
+	public String getParameter(String key) {
+		String []  values =getParameterValues(key);
+		return values ==null?null:values[0];
+	}
+	public String getMethod() {
+		return method;
+	}
+	
+	public String getUrl() {
+		return url;
+	}
+	
+	public String getQueryStr() {
+		return queryStr;
+	}
 	
 }
